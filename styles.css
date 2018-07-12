@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font: normal 18px Arial;
+  background: #039BE5;
+  overflow-y: scroll;
+}
+
+button {
+  background-color: #FFD726;
+  font-size: 17px;
+  padding: 10px 30px;
+  border: none;
+  user-select: none;
+  border-radius: 3px;
+  color: #4D5061;
+  margin: 15px;
+}
+
+button:hover{
+  background: #FFE369;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+button:active {
+  background: #E8C422;
+  box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+button:disabled, button:disabled:hover, button:disabled:active {
+  background: #E8C422;
+  color: #aaa;
+  box-shadow: none;
+  cursor: default;
+}
