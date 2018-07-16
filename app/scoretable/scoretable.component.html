@@ -1,0 +1,71 @@
+
+<section class="header">
+  <img src="/assets/logo.png" alt="">
+  <p><button (click)="onNewGame()">New game</button></p>
+
+</section>
+
+
+<section class="score-step">
+  <form [formGroup]="scoreForm" (ngSubmit)="onAdd()">
+
+    <label *ngFor="let dart of darts" class="dart-{{ dart }}">Dart {{ dart }}</label>
+
+    <ng-container *ngFor="let player of players; let i = index" >
+
+      <span class="player{{ i + 1 }}-n">{{ player }}</span>
+      <section *ngFor="let dart of darts" class="player{{ i + 1 }}-{{ dart }}">
+
+        <input id="dart{{ dart }}-{{ i + 1 }}" type="text" maxlength="2" formControlName="dart{{ dart }}-{{ i + 1 }}" >
+
+        <input id="p{{ i + 1 }}d{{ dart }}x1" type="radio" formControlName="dart{{ dart }}-{{ i + 1 }}x" value="1">
+        <label class="factor" for="p{{ i + 1 }}d{{ dart }}x1">1x</label>
+
+        <input id="p{{ i + 1 }}d{{ dart }}x2" type="radio" formControlName="dart{{ dart }}-{{ i + 1 }}x" value="2">
+        <label class="factor" for="p{{ i + 1 }}d{{ dart }}x2">2x</label>
+
+        <input id="p{{ i + 1 }}d{{ dart }}x3" type="radio" formControlName="dart{{ dart }}-{{ i + 1 }}x" value="3">
+        <label class="factor" for="p{{ i + 1 }}d{{ dart }}x3">3x</label>
+
+      </section>
+    </ng-container>
+
+    <ng-container *ngIf="!scoreForm.valid" >
+      <p align="center">Score must be in range from 0 to 20, equal to 25 or 50</p>
+    </ng-container>
+
+    <ng-container *ngIf="winner" >
+      <p align="center">{{ winner }} wins!</p>
+    </ng-container>
+
+    <button type="submit" [disabled]="!scoreForm.valid || !scoreForm.touched || winner">Add</button>
+
+  </form>
+
+</section>
+
+
+<section class="score-table">
+  <table>
+    <thead>
+    <tr>
+      <td> </td>
+      <ng-container *ngFor="let player of players" >
+        <td>{{ player }}</td>
+        <td> </td>
+      </ng-container>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor=" let scoreRow of scoreTable.reverse(); let i = index">
+      <td>{{ scoreTable.length-i-1 }}</td>
+      <td>{{ scoreRow[0] }}</td>
+      <td></td>
+      <td>{{ scoreRow[1] }}</td>
+      <td></td>
+      <td>{{ scoreRow[2] }}</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

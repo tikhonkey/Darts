@@ -1,0 +1,165 @@
+:host {
+  width: 1000px;
+  min-height: 200px;
+  color: #4D5061;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.ng-invalid {
+  color: red;
+}
+
+.header {
+  height: 55px;
+  padding: 50px;
+}
+
+.header p {
+  float: right;
+  margin: 5px;
+}
+
+.header img {
+  float: left;
+}
+
+.header button {
+  margin: 0;
+}
+
+.score-step {
+  border-top: 1px solid #5EC3F4;
+  border-bottom: 1px solid #5EC3F4;
+  padding: 30px 40px;
+}
+
+.score-step form {
+  display: grid;
+  grid-template-columns: 80px 200px auto 200px auto 200px;
+  grid-template-rows: 30px 45px 45px 45px 30px auto;
+  grid-template-areas: ".  n1  . n2  . n3"
+  "d1 p11 . p21 . p31"
+  "d2 p12 . p22 . p32"
+  "d3 p13 . p23 . p33"
+  ".  i   i i   i i"
+  ".  .   f f   f .";
+}
+
+.dart-1 { grid-area: d1; }
+.dart-2 { grid-area: d2; }
+.dart-3 { grid-area: d3; }
+
+.player1-n { grid-area: n1; }
+.player1-1 { grid-area: p11; }
+.player1-2 { grid-area: p12; }
+.player1-3 { grid-area: p13; }
+
+.player2-n { grid-area: n2; }
+.player2-1 { grid-area: p21; }
+.player2-2 { grid-area: p22; }
+.player2-3 { grid-area: p23; }
+
+.player3-n { grid-area: n3; }
+.player3-1 { grid-area: p31; }
+.player3-2 { grid-area: p32; }
+.player3-3 { grid-area: p33; }
+
+.player1-n, .player2-n, .player3-n {
+  color: #fff;
+  font-size: 18px;
+}
+
+.score-step p {
+  grid-area: i;
+  text-align: center;
+  color: #fff;
+}
+
+.score-step button {
+  grid-area: f;
+  align-content: left;
+  padding: 15px 200px;
+  cursor: pointer;
+  margin: 40px 0 15px;
+}
+
+.score-step input[type=text] {
+  display: inline-block;
+  border-radius: 2px 0 0 2px;
+  width: 2ch;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.score-step input[type=radio] {
+  display: none;
+}
+
+.score-step .factor {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 7px;
+  height: 29px;
+  line-height: 29px;
+  border: 3px solid #4D5061;
+  background: #fff;
+  color: #4D5061;
+  border-left: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.score-step input:checked + label{
+  background: #4D5061;
+  color: #fff;
+}
+
+.score-step .factor[for*="x1"] {
+  border-left: 3px solid #4D5061;
+}
+
+.score-step .factor[for*="x3"] {
+  border-radius: 0 15px 15px 0;
+}
+
+.score-table {
+  padding: 40px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #039BE5;
+  color: #fff;
+}
+tr {
+  height: 50px;
+}
+tbody tr:nth-child(n+1){
+  background-color: #fff;
+}
+td {
+  border-bottom: 1px #039BE5 solid;
+}
+
+td:nth-child(1), td:nth-child(7) {
+  width: 40px;
+  font-size: 16px;
+  background-color: #039BE5;
+  color: #fff;
+  border-bottom: none;
+}
+td:nth-child(2n) {
+  width: 20%;
+}
+tbody tr:last-child {
+  color: #aaa;
+}
+tbody tr:last-child td:first-child {
+  font-size: 0;
+}

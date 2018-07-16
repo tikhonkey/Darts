@@ -1,0 +1,13 @@
+<section>
+  <p><img width="219" height="101" src="/assets/logo-big.png" alt=""></p>
+
+  <form [formGroup]="authForm" (ngSubmit)="onLogIn(authForm.value)">
+    <label for="login">Login:</label>
+    <input type="text" id="login" formControlName="login">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+
+    <button type="submit">Login</button>
+  </form>
+</section>

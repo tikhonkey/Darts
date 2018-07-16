@@ -1,0 +1,82 @@
+:host {
+  width: 1000px;
+  min-height: 200px;
+  color: #4D5061;
+  display: block;
+  margin: 0 auto;
+  padding: 50px;
+
+}
+
+header button {
+  float: right;
+}
+
+.select-form{
+  width: 70%;
+  margin: 5vh auto;
+}
+
+.select-form h4{
+  color: #fff;
+  font-weight: normal;
+}
+
+.select-form input[type=checkbox] {
+  display: none;
+}
+
+.select-form label{
+  display: inline-block;
+  margin-bottom: 1px;
+  background: #fff;
+  color: #4D5061;
+  cursor: pointer;
+  padding: 5px 20px;
+  width: 89%;
+  vertical-align: top;
+}
+.close, .close:hover, .close:active {
+  border-radius: 0;
+  line-height: 36px;
+  text-align: center;
+  margin: 0;
+  padding: 5px 10px;
+  background: #fff;
+  box-shadow: none;
+  display: inline-block;
+  width: 5%;
+}
+.select-form input:checked + label,
+.select-form input:checked ~ button {
+  background: #FFE369;
+}
+
+.name, .email {
+  display: inline-block;
+  width: 50%;
+}
+
+section div:first-child label { border-radius: 3px 0 0 0; }
+section div:first-child button { border-radius: 0 3px 0 0; }
+
+section div:last-child label { border-radius: 0 0 0 3px; }
+section div:last-child button { border-radius: 0 0 3px 0; }
+
+button[type=submit], .add-player button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 100px;
+}
+
+.add-player{
+  width: 55%;
+  margin: 0 auto;
+}
+.add-player div {
+  display: inline-block;
+  margin: 10px;
+}
+.add-player label {
+  display: block;
+}

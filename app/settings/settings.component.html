@@ -1,0 +1,35 @@
+<header>
+  <img height="57" width="126" src="/assets/logo.png" alt="">
+  <button (click)="onLogOut()">Logout</button>
+</header>
+
+<section class="select-form">
+  <h4>Please select 3 players:</h4>
+  <form [formGroup]="selectForm" (ngSubmit)="onSubmit()">
+    <section formArrayName="players">
+      <div *ngFor="let player of players; let i = index">
+        <input class="checker" type="checkbox" id="p{{ i }}" formControlName="{{ i }}">
+        <label for="p{{ i }}" (click)="onClick(player.name)">
+          <div class="name">{{ player.name }}</div>
+          <div class="email">{{ player.email }}</div>
+        </label>
+        <button class="close" [disabled]="!admin" (click)="onDelete(i, player.name)">X</button>
+      </div>
+    </section>
+    <button type="submit" [disabled]="counter.length !== 3">Start</button>
+  </form>
+</section>
+
+<section class="add-player" *ngIf="admin">
+  <form [formGroup]="addForm">
+    <div>
+    <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+    <label for="email">Email:</label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+    <button type="button" (click)="onAdd(addForm.value)" [disabled]="!addForm.valid">Add player</button>
+  </form>
+</section>

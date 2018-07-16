@@ -14,6 +14,7 @@ button {
   border-radius: 3px;
   color: #4D5061;
   margin: 15px;
+  cursor: pointer;
 }
 
 button:hover{
@@ -31,4 +32,18 @@ button:disabled, button:disabled:hover, button:disabled:active {
   color: #aaa;
   box-shadow: none;
   cursor: default;
+}
+
+input {
+  border: none;
+  border-radius: 2px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+label {
+  color: #fff;
+  font-size: 18px;
+  line-height: 36px;
 }
